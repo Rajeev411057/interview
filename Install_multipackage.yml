@@ -13,8 +13,3 @@
       yum: name=httpd state=present
       when: ansible_os_family == "RedHat" 
       ignore_errors: true
-
-    - name: Install Apache on Amazon Linux
-      amazon.aws.yum: name=httpd state=present
-      when: ansible_os_family == "Amazon"
-      ignore_errors: true
