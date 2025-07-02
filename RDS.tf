@@ -12,3 +12,5 @@ resource "aws_db_instance" "db_instance" {
   instance_class           = var.instance_class
   allocated_storage        = 20
 }
+
+bjkbgit a
