@@ -151,7 +151,7 @@ ingress = [
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["YOUR_IP/32"]
+    cidr_blocks = ["YOUR_IP/302"]
   }
 ]
 
