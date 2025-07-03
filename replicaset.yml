@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Replicaset
+metadata:
+   name: forntend
+   labels:
+     app: my-app
+     tier: forntend
+spec:
+   replicas: 3
+   selector:
+      matchLabels:
+       tier: forntend
+   template: 
+     meatadata:
+       labels:
+         tier: forntend
+       spec:
+         containers:
+           - name: nginx container
+             image: nginx 
+
+# kubectl apply -f replicaset.yml
+# kubectl get rs
+# kubectl describe name
+
+
+# Example of a Kubernetes Replicaset YAML file
+apiVersion: apps/v1
+kind: Replicaset
+meatadata:
+   name: my-replicaset
+spec:
+   replicas: 3
+   selector:
+      matchLabels:
+         app: my-app
+   template:
+      metadata:
+         labels:
+            app: my-app
+      spec:
+         containers:
+            - name: my-container
+              image: nginx:latest
+
