@@ -1,23 +1,26 @@
 apiVersion: apps/v1
-kind: Replicaset
+kind: ReplicaSet
 metadata:
-   name: forntend
-   labels:
-     app: my-app
-     tier: forntend
+  name: frontend
+  labels:
+    app: my-app
+    tier: frontend
 spec:
-   replicas: 3
-   selector:
-      matchLabels:
-       tier: forntend
-   template: 
-     meatadata:
-       labels:
-         tier: forntend
-       spec:
-         containers:
-           - name: nginx container
-             image: nginx 
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        app: my-app
+        tier: frontend
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+
 
 # kubectl apply -f replicaset.yml
 # kubectl get rs
